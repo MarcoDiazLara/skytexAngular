@@ -1,0 +1,22 @@
+ <mat-toolbar color="primary" class="header">
+    <span class="logo">{{etiquetas.titulo}}</span>
+  </mat-toolbar>
+  <div class="title-container">
+    <h1>{{etiquetas.nowCartelera}}</h1>
+  </div>
+  <div class="movie-list">
+    <mat-card *ngFor="let movie of movies" [routerLink]="['/movie', movie.id]" class="movie-card">
+      <div class="movie-card-content">
+        <div class="movie-card-image">
+          <img mat-card-image [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="{{ movie.title }}">
+          <div class="movie-card-title">
+            <h3>{{ movie.title }}</h3>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+  <mat-toolbar color="primary" class="footer">
+    <span>&copy; {{etiquetas.footer}}</span>
+  </mat-toolbar>
+  
